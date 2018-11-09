@@ -1,0 +1,20 @@
+<!--pages/news/news-detail/news-detail.wxml-->
+<view class="news-detail-container">
+<image class="head-img" src="../../images/banner1.jpg"></image>
+<view class="author-time">
+<image class="author-avatar" src="../../images/head1.png"></image>
+<text class="author-name">mango</text>
+<text class="const-text">发表于</text>
+<text class="time">2018.10.10</text>
+</view>
+<text class="title">哈哈哈</text>
+<view class="tool">
+  <view class="circle-img">
+    <image src="../../images/sc.png"></image>
+    <image class="share-img" src="../../images/fx.png"></image>
+  </view>
+  <view class="horizon"></view>
+</view>
+<text class="detail">我是哈哈哈</text>
+</view>
+<text>{{detailData}}</text>

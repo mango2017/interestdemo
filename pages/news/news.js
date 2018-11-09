@@ -29,5 +29,13 @@ Page({
     this.setData({
       useData: newsData.initData
     })
+  },
+  
+  //跳转详情页
+  goNewsDetail:function(event){
+    var newsid = event.currentTarget.dataset.newsid;
+    wx.navigateTo({
+      url: 'news-detail/news-detail?newsid=' + newsid,
+    })
   }
 })

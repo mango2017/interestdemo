@@ -9,7 +9,7 @@
   </swiper>
 
   <block wx:for="{{useData}}" wx:for-item="item" wx:key="key">
-  <!-- 
+    <!-- 
   item= {
     "newsid":0,
     "authorIcon":"../images/head1.png",
@@ -26,6 +26,8 @@
     "title":"岁月不老，一世倾城",
   }
    -->
-    <template is="newsTemplate" data="{{...item}}" />
+    <view bindtap='goNewsDetail' data-newsid="{{item.newsid}}">
+      <template is="newsTemplate" data="{{...item}}" />
+    </view>
   </block>
 </view>
