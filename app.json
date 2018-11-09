@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/user/user",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/news/news"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#109D59",
+    "navigationBarTitleText": "趣味小程序",
+    "navigationBarTextStyle":"yellow"
+  } 
+}
