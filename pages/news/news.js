@@ -1,10 +1,22 @@
 // pages/news/news.js
+//引入js
+var newsData = require("../data/newsdata.js");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    indicatorDots:true,
+    autoplay:true,
+    interval:2000,
+    circular:true,
+    imgUrls: [
+      '../images/banner1.jpg',
+      '../images/banner2.jpg',
+      '../images/banner3.jpg'
+    ],
+    useData:""
 
   },
 
@@ -12,55 +24,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    // console.log(newsData);
+    //this.setData可以让view重绘
+    this.setData({
+      useData: newsData.initData
+    })
   }
 })
