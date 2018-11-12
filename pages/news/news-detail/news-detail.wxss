@@ -90,4 +90,11 @@
   font-size: 24rpx;
 }
 
+.playermusic{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-left: 40rpx;
+}
+
 

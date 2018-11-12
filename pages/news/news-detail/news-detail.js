@@ -7,6 +7,7 @@ Page({
    */
   data: {
     // detailData:[]
+    isPlayer:false
   },
 
   /**
@@ -54,5 +55,65 @@ Page({
       //暂时不知道，因为我根本不知道视图是怎么改变的
       collected: newCollect
     })
+
+    //提示框
+    wx.showToast({
+      title: newCollect?'收藏成功':'取消收藏',
+      icon: 'success',
+      duration: 800,
+      mask:true
+    })
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '这是一个模态弹窗',
+    //   success(res) {
+    //     if (res.confirm) {
+    //       console.log('用户点击确定')
+    //     } else if (res.cancel) {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
+  },
+  onShareTap:function(event){
+    wx.showActionSheet({
+      itemList: ['分享到微信', '分享到微博', '分享到QQ'],
+      success(res) {
+        console.log(res.tapIndex)
+      },
+      fail(res) {
+        console.log(res.errMsg)
+      }
+    })
+  },
+  onShareAppMessage:function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: newsData.initData[this.data.newsid].title,
+      path: '/pages/news/news-detail/news-detail?newsid=' + this.data.newsid
+    }
+  },
+
+  playerMusicTap:function(event){
+    const backgroundAudioManager = wx.getBackgroundAudioManager();
+    if (backgroundAudioManager.paused || backgroundAudioManager.paused == undefined){
+      //是暂停了，，就播放
+      backgroundAudioManager.title = newsData.initData[this.data.newsid].music.title;
+      backgroundAudioManager.coverImgUrl = newsData.initData[this.data.newsid].music.coverImgUrl;
+      // 设置了 src 之后会自动播放
+      backgroundAudioManager.src = newsData.initData[this.data.newsid].music.src;
+      this.setData({
+        isPlayer:true
+      });
+    }else{
+      //没暂停，就停止
+      backgroundAudioManager.pause();
+      this.setData({
+        isPlayer: false
+      });
+    } 
   }
 })
