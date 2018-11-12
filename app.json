@@ -2,6 +2,7 @@
   "pages":[
     "pages/user/user",
     "pages/index/index",
+    "pages/movie/movie",
     "pages/logs/logs",
     "pages/news/news",
     "pages/news/news-detail/news-detail"
@@ -11,5 +12,22 @@
     "navigationBarBackgroundColor": "#109D59",
     "navigationBarTitleText": "趣味小程序",
     "navigationBarTextStyle":"yellow"
-  } 
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/news/news",
+        "text": "新闻",
+        "iconPath":"pages/images/yuedu.png",
+        "selectedIconPath":"pages/images/yuedu.png"
+      },{
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "pages/images/diany.png",
+        "selectedIconPath": "pages/images/diany.png"
+      }
+    ],
+    "selectedColor":"#109D59",
+    "borderStyle":"white"
+  }
 }

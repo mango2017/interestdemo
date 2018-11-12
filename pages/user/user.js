@@ -2,7 +2,7 @@
 Page({
   goNewsTap:function(event){
     //跳转页面
-    wx.navigateTo({
+    wx.switchTab({
       url: '../news/news',
     })
   }
