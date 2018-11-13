@@ -1,2 +1,5 @@
 <!--pages/movie/movie.wxml-->
-<text>pages/movie/movie.wxml</text>
+<import src="movie-list-template/movie-list-template.wxml" />
+<template is="movielistTemplate" data="{{...in_theaters}}" />
+<template is="movielistTemplate" data="{{...coming_soon}}" />
+<template is="movielistTemplate" data="{{...top250}}" />
