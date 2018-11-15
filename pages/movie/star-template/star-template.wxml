@@ -7,7 +7,7 @@
       <image src="../images/star.png"></image>
       <image src="../images/star.png"></image> -->
       <block wx:for="{{stars}}" wx:for-item="item" wx:key="key">
-          <image src="{{item?'http://img.027cgb.com/610651/star.png':'http://img.027cgb.com/610651/chat.png'}}"></image>
+          <image src="{{item?'http://132.232.229.179:88/images/star.png':'http://132.232.229.179:88/images/chat.png'}}"></image>
       </block>
     </view>
     <text class="star-score">{{average}}</text>

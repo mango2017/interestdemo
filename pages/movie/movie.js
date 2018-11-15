@@ -70,6 +70,13 @@ Page({
     wx.navigateTo({
       url: 'movie-more/movie-more?categoryName=' + categoryName,
     })
+  },
+  //电影详情
+  goMovieDetail:function(event){
+    var movieId = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: 'movie-detail/movie-detail?movieid='+movieId,
+    })
   }
 
 })

@@ -2,7 +2,7 @@
 <template name="movieGridTemplate">
   <view class="grid-container">
     <block wx:for="{{movies}}" wx:for-item="item" wx:key="key">
-      <view class="single-view-container">
+      <view class="single-view-container" catchtap='goMovieDetail' data-movieid="{{movieid}}">
         <template is="movieTemplate" data="{{...item}}"></template>
       </view>
     </block>
